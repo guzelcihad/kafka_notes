@@ -40,3 +40,14 @@ and then ```stat```. This will give us the status of Zookeper.
 ### Consume Messages
 * Open another terminal window and type command ```bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my_topic --from-beginning```
 
+### Creating Kafka Producer Client Application
+First, need an object represent require configuration properties neeeded to start up a producer.
+<br/>Three required properties needed: ```bootstrap.server```, ```key.serializer```, ```value.serializer```.
+* ```bootstrap.server``` : Defines the server which producer connects to
+* ```key and value serializers``` : Optimizes the size of the messages not only for network transmission, but for storage even compression.
+<br/>Producer is responsible how the message contents are to be encoded so the Cosumer can know how to decode them.
+<br/>When the ```KafkaProducer``` object is created, the properties are used to instantiate an instance of ```ProducerConfig``` class. All producer configuration is defined and referenced internally.
+<br/>```ProducerRecord``` critical class. It represents what will be published by the Kafka Producer. It is basic and straightforward.
+<br/>It only requires two values to be set in order for it to be considered a valid record that can be sent by Kafka Producer. These two values are the topic and the value. The other optional values are Partition, Timestamp and Key.
+* ```KafkaProducer``` instances can only send ```ProducerRecord``` that match the key and value serializers types it is 
+configured with.
