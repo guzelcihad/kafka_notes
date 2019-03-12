@@ -51,3 +51,17 @@ First, need an object represent require configuration properties neeeded to star
 <br/>It only requires two values to be set in order for it to be considered a valid record that can be sent by Kafka Producer. These two values are the topic and the value. The other optional values are Partition, Timestamp and Key.
 * ```KafkaProducer``` instances can only send ```ProducerRecord``` that match the key and value serializers types it is 
 configured with.
+
+### Kafka Connect Development (Really Important Notes For Development)
+###Standalone Development
+* ```bin/connect-standalone.sh config/worker.properties config/your_connector_file.properties``` command starts the standalone cluster.
+* Debugging is hard. To make it easy, first find the ```connect-runtime.jar```. This jar contains the class ```ConnectStandalone``` , the main class when running the ```connect-standalone.sh``` script. ```connect-runtime.jar```
+can be download from maven repo.
+
+* Open a project in IDE and add maven dependency for this jar. And add connector code in the src folder. Do not forget to 
+```config/your_connector_file.properties``` file includes main YourSourceConnector class path. 
+
+* To be able to see log in the console, add ```log4j.properties``` file to your project which is located in the ```kafka/config``` directory. 
+
+* To be able to debug your code, fire the ```ConnectStandalone.class```.
+* NOTE: Kafka Connect , uses jar file. Our connector code must be packaged. It can be spesific path. But don't forget , this path must be specified in the ```your_connector.properties``` file. So, whenever you change the your own connector code in the IDE , package your project as jar and deploy the specified path which Kafka Connect can find it. 
