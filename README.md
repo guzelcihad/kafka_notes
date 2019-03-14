@@ -65,3 +65,8 @@ can be download from maven repo.
 
 * To be able to debug your code, fire the ```ConnectStandalone.class```.
 * NOTE: Kafka Connect , uses jar file. Our connector code must be packaged. It can be spesific path. But don't forget , this path must be specified in the ```your_connector.properties``` file. So, whenever you change the your own connector code in the IDE , package your project as jar and deploy the specified path which Kafka Connect can find it. 
+
+### Must be Reviewed
+There are good question to review
+* https://stackoverflow.com/questions/tagged/mqtt+apache-kafka
+* https://stackoverflow.com/questions/45254624/mqtt-to-kafka-how-to-avoid-duplicates
