@@ -70,3 +70,5 @@ can be download from maven repo.
 There are good question to review
 * https://stackoverflow.com/questions/tagged/mqtt+apache-kafka
 * https://stackoverflow.com/questions/45254624/mqtt-to-kafka-how-to-avoid-duplicates
+* http://www.steves-internet-guide.com/mqtt-clean-sessions-example/
+* https://stackoverflow.com/questions/50154837/paho-mqtt-message-reliability-when-client-disconnects
