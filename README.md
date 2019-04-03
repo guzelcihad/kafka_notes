@@ -53,7 +53,7 @@ First, need an object represent require configuration properties neeeded to star
 configured with.
 
 ### Kafka Connect Development (Really Important Notes For Development)
-###Standalone Development
+### Standalone Development
 * ```bin/connect-standalone.sh config/worker.properties config/your_connector_file.properties``` command starts the standalone cluster.
 * Debugging is hard. To make it easy, first find the ```connect-runtime.jar```. This jar contains the class ```ConnectStandalone``` , the main class when running the ```connect-standalone.sh``` script. ```connect-runtime.jar```
 can be download from maven repo.
@@ -72,3 +72,6 @@ There are good question to review
 * https://stackoverflow.com/questions/45254624/mqtt-to-kafka-how-to-avoid-duplicates
 * http://www.steves-internet-guide.com/mqtt-clean-sessions-example/
 * https://stackoverflow.com/questions/50154837/paho-mqtt-message-reliability-when-client-disconnects
+### Important Note For Converters and Serialization in Kafka Connect
+* https://www.bountysource.com/issues/52030617-not-able-to-sink-data-from-kafka-to-elasticsearch-using-kafka-connect-elasticsearch
+* https://www.confluent.io/blog/kafka-connect-deep-dive-converters-serialization-explained
